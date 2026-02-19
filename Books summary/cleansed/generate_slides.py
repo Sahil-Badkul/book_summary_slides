@@ -5,16 +5,20 @@ import sys
 sys.path.append(".")
 
 # ---------------- PATHS ----------------
-bg_path = "/Users/mayankjain/Documents/Sahil Jain/Books summary/Utility/Sahil jain logo page .png"
+want_bg = True
 
-file_name = "happiness_is_a_skill"
-input_path = f"/Users/mayankjain/Documents/Sahil Jain/Books summary/raw/{file_name}.txt"
-output_path = f"/Users/mayankjain/Documents/Sahil Jain/Books summary/curated/{file_name}.pptx"
+sahil_bg_path = "/Users/mayankjain/Documents/Sahil Jain/book_summary_slides/Books summary/Utility/Sahil jain logo page .png"
+mayank_bg_path = "/Users/mayankjain/Desktop/Mayank_logo.png"
+bg_path = sahil_bg_path
+
+file_name = "change_your_life"
+input_path = f"/Users/mayankjain/Documents/Sahil Jain/book_summary_slides/Books summary/raw/{file_name}.txt"
+output_path = f"/Users/mayankjain/Documents/Sahil Jain/book_summary_slides/Books summary/curated/{file_name}.pptx"
 
 # ---------------- CONFIG ----------------
 MAX_WORDS_PER_SLIDE = 30
-FONT_NAME = "Helvetica"
-FONT_SIZE = Pt(36)
+FONT_NAME = "Helvetica" 
+FONT_SIZE = Pt(36) 
 FONT_BOLD = True
 
 LEFT_MARGIN = Inches(1.3)
@@ -120,11 +124,12 @@ for chunk in slides_chunks:
     slide = prs.slides.add_slide(prs.slide_layouts[6])
 
     # Background
-    slide.shapes.add_picture(
-        bg_path, 0, 0,
-        width=prs.slide_width,
-        height=prs.slide_height
-    )
+    if want_bg:
+        slide.shapes.add_picture(
+            bg_path, 0, 0,
+            width=prs.slide_width,
+            height=prs.slide_height
+        )
 
     # Limit to max 3 lines visually
     if len(chunk) > 3:

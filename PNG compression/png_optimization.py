@@ -33,7 +33,9 @@ def compress_png(input_path, output_path):
     print("Could not reach target size without noticeable quality drop.")
 
 # Usage
-png_name = "Nothing is free"
+png_name = "Happiness is a skill"
 input_path = f"/Users/mayankjain/Documents/Sahil Jain/Thumbnail/{png_name}.png"
 output_path = f"/Users/mayankjain/Documents/Sahil Jain/Thumbnail/{png_name}_compressed.png"
+# input_path = "/Users/mayankjain/Documents/Mayank Badkul/Thumbnail/How to earn 1cr in 365 days.png"
+# output_path = "/Users/mayankjain/Documents/Mayank Badkul/Thumbnail/How to earn 1cr in 365 days_compressed.png"
 compress_png(input_path, output_path)
